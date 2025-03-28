@@ -24,7 +24,7 @@ echo "::group::/usr/share/dotnet"
 du -hsc /usr/share/dotnet
 echo "::endgroup::"
 
-sudo rm -rf /usr/share/dotnet 
+sudo rm -rf /usr/share/dotnet || :
 echo "::group::/usr/local/*"
 du -hsc /usr/local/*
 echo "::endgroup::"
