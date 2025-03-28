@@ -19,8 +19,6 @@
 
 set -eux
 
-df -h
-
 echo "::group::/usr/local/*"
 du -hsc /usr/local/*
 echo "::endgroup::"
@@ -49,7 +47,8 @@ sudo rm -rf \
   /usr/local/bin/stack \
   /usr/local/bin/terraform || :
 
-sudo rm -rf /usr/local/bin/oc || : \
+sudo rm -rf /usr/local/bin/oc || :
+
 echo "::group::/usr/local/share/*"
 du -hsc /usr/local/share/*
 echo "::endgroup::"
@@ -98,5 +97,3 @@ sudo apt purge -y \
 
 sudo docker image prune --all --force
 sudo docker builder prune -a
-
-df -h
